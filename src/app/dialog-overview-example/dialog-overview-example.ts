@@ -29,6 +29,8 @@ export class DialogOverviewExample {
       data: {name: this.name, animal: this.animal}
     });
     // dialog closed event
+    // Stream that emits when a dialog has been opened.
+    // Subject<MatDialogRef<any>>
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
