@@ -16,6 +16,7 @@ export interface DialogData {
   styleUrls: ['dialog-overview-example.css'],
 })
 export class DialogOverviewExample {
+  isActive = true;
 
   animal!: string;
   name!: string;
@@ -34,6 +35,7 @@ export class DialogOverviewExample {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
+      this.isActive = !this.isActive;
     });
   }
 
